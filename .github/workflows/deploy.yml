@@ -13,6 +13,18 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+
+      - name: Install dependencies
+        run:  yarn install
+
+      - name: Build theme
+        run:  yarn dev
+
+      - name: Test theme
+        run:  yarn test:ci
+
       - name: Deploy Ghost theme
         uses: TryGhost/action-deploy-theme@v1
         with:
