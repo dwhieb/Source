@@ -20,7 +20,7 @@ jobs:
         run:  yarn install
 
       - name: Build theme
-        run:  yarn dev
+        run:  yarn zip
 
       - name: Test theme
         run:  yarn test:ci
